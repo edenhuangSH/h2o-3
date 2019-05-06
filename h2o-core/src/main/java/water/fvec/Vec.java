@@ -1093,10 +1093,8 @@ public class Vec extends Keyed<Vec> {
     int tcidx = c._cidx;
     if( cstart == start && v != null && tcidx == cidx)
       return c;                       // Already filled-in
-    if (cstart != -1 && v != null && tcidx != -1)
-      throw new RuntimeException("Was not filled in (everybody racily writes the same start value:  cstart = " + cstart + " v = " + v + " cidx = " + tcidx + ", chunk = " + c.getClass().getName());
     c._vec = this;             // Fields not filled in by unpacking from Value
-    c._start = start;          // Fields not filled in by unpacking from Value
+    c._start = start;
     c._cidx = cidx;
     return c;
   }
